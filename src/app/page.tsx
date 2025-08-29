@@ -107,9 +107,9 @@ export default function HomePage() {
         <h2 className="text-2xl font-semibold">Contact</h2>
         <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-5">
           <p className="text-slate-300">
-            Email: <a className="underline" href="mailto:you@example.com">you@example.com</a> ·
-            GitHub: <a className="underline" href="https://github.com/you">github.com/you</a> ·
-            LinkedIn: <a className="underline" href="https://www.linkedin.com/in/you">/in/you</a>
+            Email: <a className="underline" href="mailto:husnishafeer@gmail.com">husnishafeer@gmail.com</a> ·
+            GitHub: <a className="underline" href="https://github.com/mohamed-husni">github.com/mohamed-husni</a> ·
+            LinkedIn: <a className="underline" href="https://www.linkedin.com/in/mohamed-husni-15089522a/">Mohamed Husni</a>
           </p>
         </div>
       </section>
