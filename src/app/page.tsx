@@ -1,45 +1,76 @@
 // app/page.tsx
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Husni Shafeer | Portfolio",
+  description: "Personal portfolio of Husni Shafeer - Software Engineer & DevOps Enthusiast.",
+  keywords: "husni, shafeer, portfolio, AI, developer, sri lanka, software engineer, DevOps engineer",
+  authors: [{ name: "Husni Shafeer" }],
+  openGraph: {
+    title: "Husni Shafeer | Portfolio",
+    description: "Showcasing projects and skills of Husni Shafeer.",
+    url: "https://husnishafeer.netlify.app",
+    siteName: "Husni Shafeer",
+    images: [
+      {
+        url: "https://husnishafeer.netlify.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Husni Shafeer Portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
+
+
+
 export default function HomePage() {
   return (
+    
     <div className="space-y-16">
       {/* Hero */}
+      
+
       <section className="pt-6">
-        <div className="grid gap-6 lg:grid-cols-3">
-          <div className="lg:col-span-2">
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
-              Aspiring DevOps Engineer
-            </h1>
-            <p className="mt-4 text-slate-300 leading-relaxed">
-              I design CI/CD pipelines, automate infrastructure, and improve developer workflows.
-              Currently seeking an internship where I can ship reliable systems and learn from a great team.
-            </p>
-            <div className="mt-6 flex gap-3">
-              <a
-                href="/resume.pdf"
-                className="px-4 py-2 rounded-lg bg-white/10 border border-white/10 hover:bg-white/15 transition"
-              >
-                Download Resume
-              </a>
-              <a
-                href="#projects"
-                className="px-4 py-2 rounded-lg bg-indigo-500/90 hover:bg-indigo-500 transition"
-              >
-                See Projects
-              </a>
-            </div>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-            <h2 className="text-lg font-semibold">Quick facts</h2>
-            <ul className="mt-3 space-y-2 text-sm text-slate-300">
-              <li>• Next.js (App Router, TypeScript)</li>
-              <li>• CI/CD: GitHub Actions → Netlify</li>
-              <li>• IaC: Terraform (basics)</li>
-              <li>• Containers: Docker</li>
-              <li>• Cloud: AWS (core services)</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+  <div className="grid gap-6 lg:grid-cols-3 items-center">
+    {/* Left side: text */}
+    <div className="lg:col-span-2">
+      <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
+        Aspiring DevOps Engineer
+      </h1>
+      <p className="mt-4 text-slate-300 leading-relaxed">
+        I design CI/CD pipelines, automate infrastructure, and improve developer workflows.
+        Currently seeking an internship where I can ship reliable systems and learn from a great team.
+      </p>
+      <div className="mt-6 flex gap-3">
+        <a
+          href="/resume.pdf"
+          className="px-4 py-2 rounded-lg bg-white/10 border border-white/10 hover:bg-white/15 transition"
+        >
+          Download Resume
+        </a>
+        <a
+          href="#projects"
+          className="px-4 py-2 rounded-lg bg-indigo-500/90 hover:bg-indigo-500 transition"
+        >
+          See Projects
+        </a>
+      </div>
+    </div>
+
+    {/* Right side: image */}
+    <div className="flex justify-center lg:justify-end">
+      <img
+        src="/profile.jpeg"
+        alt="Husni Shafeer"
+        className="rounded-full w-50 h-50 border-4 border-indigo-500/50 shadow-lg"
+      />
+    </div>
+  </div>
+</section>
+
 
       {/* Skills */}
       <section id="skills">
