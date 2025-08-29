@@ -1,41 +1,32 @@
+
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
- title: "Husni's Portfolio",
-  description: "Portfolio",
+  title: "Husni's Portfolio",
+  description: "Junior DevOps engineer portfolio",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="bg-gray-100 text-gray-900">
-        {/* Navbar */}
-        <nav className="bg-gray-800 text-white p-4 flex gap-6">
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/projects">Projects</Link>
-          <Link href="/contact">Contact</Link>
-        </nav>
-
-        {/* Page content */}
-        <main className="container mx-auto">{children}</main>
+    <html lang="en" suppressHydrationWarning>
+      <body className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-950 text-slate-100 antialiased">
+        <header className="sticky top-0 backdrop-blur supports-[backdrop-filter]:bg-slate-900/60 border-b border-white/10">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+            <a href="/" className="font-semibold tracking-tight">Mohamed husni</a>
+            <nav className="text-sm">
+              <a href="#skills" className="opacity-90 hover:opacity-100 mr-6">Skills</a>
+              <a href="#projects" className="opacity-90 hover:opacity-100 mr-6">Projects</a>
+              <a href="#contact" className="opacity-90 hover:opacity-100">Contact</a>
+            </nav>
+          </div>
+        </header>
+        <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">{children}</main>
+        <footer className="mt-16 border-t border-white/10">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-sm opacity-70">
+            © {new Date().getFullYear()} Mohamed Husni
+          </div>
+        </footer>
       </body>
     </html>
   );
