@@ -46,7 +46,7 @@ export default function HomePage() {
       </p>
       <div className="mt-6 flex gap-3">
         <a
-          href="/resume.pdf"
+          href="/Husni_DevOps_Intern.pdf"
           className="px-4 py-2 rounded-lg bg-white/10 border border-white/10 hover:bg-white/15 transition"
         >
           Download Resume
