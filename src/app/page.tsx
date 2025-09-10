@@ -37,32 +37,42 @@ export default function HomePage() {
       <section className="pt-6">
         <div className="grid gap-6 lg:grid-cols-3 items-center">
           {/* Left side: text */}
-          <div className="lg:col-span-2">
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
-              SOFTWARE ENGINEER | DEVOPS ENTHUSIAST
+          <div className="lg:col-span-2 text-center lg:text-left">
+            {/* Name */}
+            <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-400 via-pink-400 to-orange-400 text-transparent bg-clip-text">
+              Mohamed Husni
             </h1>
-            <p className="mt-4 text-slate-300 leading-relaxed">
+
+            {/* Job Title */}
+            <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-slate-300 tracking-wide">
+              SOFTWARE ENGINEER <span className="text-indigo-400">|</span> DEVOPS ENTHUSIAST
+            </h2>
+
+            {/* Summary */}
+            <p className="mt-6 text-slate-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
               Motivated Software Engineer with a strong foundation in full-stack development and a growing specialization in DevOps practices.
               Experienced in building scalable web applications, fine-tuning AI models, and deploying systems on cloud platforms.
-              Skilled in bridging the gap between software development and infrastructure automation—capable of delivering projects from design to deployment.
+              Skilled in bridging the gap between development and infrastructure automation, capable of delivering projects from design to deployment.
               Seeking a Software Engineer Internship to apply technical expertise, collaborate with teams, and contribute to real-world solutions.
-
             </p>
-            <div className="mt-6 flex gap-3">
+
+            {/* Buttons */}
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
                 href="/Husni_DevOps_Intern.pdf"
-                className="px-4 py-2 rounded-lg bg-white/10 border border-white/10 hover:bg-white/15 transition"
+                className="px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold shadow-lg hover:scale-105 transition"
               >
-                Download Resume
+                📄 Download Resume
               </a>
               <a
                 href="#projects"
-                className="px-4 py-2 rounded-lg bg-indigo-500/90 hover:bg-indigo-500 transition"
+                className="px-6 py-3 rounded-lg bg-gradient-to-r from-orange-400 to-pink-500 text-white font-semibold shadow-lg hover:scale-105 transition"
               >
-                See Projects
+                🚀 See Projects
               </a>
             </div>
           </div>
+
 
           {/* Right side: image */}
           <div className="flex justify-center lg:justify-end">
@@ -170,39 +180,37 @@ export default function HomePage() {
               name: "AWS CI/CD Pipeline",
               desc: "Designed a CI/CD pipeline on AWS for a Java Maven web app using GitHub, CodeBuild, CodeDeploy, and CodePipeline.",
               img: "/projects/aws-color.webp",
-              link: "https://github.com/mohamed-husni/DevOps-project01.git", // replace with repo link
+              github: "https://github.com/mohamed-husni/DevOps-project01.git",
             },
             {
               name: "SmartAdMaker – AI Poster Generator",
-              desc: "Fine-tuned Stable Diffusion with LoRA to generate advertisements. Built a React + Tailwind web app for input, display, and editing. Live App: https://smart-ad-maker.vercel.app/",
+              desc: "Fine-tuned Stable Diffusion with LoRA to generate advertisements. Built a React + Tailwind web app for input, display, and editing.",
               img: "/projects/Screenshot 2024-10-16 121538.png",
-              link: "https://github.com/mohamed-husni/SmartAdMaker.git",
+              github: "https://github.com/mohamed-husni/SmartAdMaker.git",
+              live: "https://smart-ad-maker.vercel.app/",
             },
             {
               name: "MongoDB App – Lanka Milk Foods",
               desc: "Full-stack app with Node.js & React to manage employee, product, and distribution data using MongoDB.",
               img: "/projects/Screenshot 2024-10-07 201114.png",
-              link: "https://github.com/mohamed-husni/MongoDB-App-Lanka-Milk-Foods.git",
+              github: "https://github.com/mohamed-husni/MongoDB-App-Lanka-Milk-Foods.git",
             },
             {
               name: "Power BI Dashboard",
               desc: "Built dashboards for a global bicycle spare parts distributor, transforming raw data into KPIs for decision-making.",
               img: "/projects/Screenshot 2024-02-12 133507.png",
-
+              github: null, // no repo link
             },
             {
               name: "Alfie Pet Shop Web App",
               desc: "E-commerce platform built with Vue.js & Tailwind, later migrated to WordPress with shopping cart & authentication.",
               img: "/projects/Screenshot 2024-10-04 105908.png",
-              link: "https://github.com/mohamed-husni",
+              github: null,
             },
           ].map((p) => (
-            <a
+            <div
               key={p.name}
-              href={p.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/10 transition block"
+              className="group rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/10 transition flex flex-col"
             >
               <div className="relative w-full h-40 rounded-lg overflow-hidden">
                 <Image
@@ -213,11 +221,36 @@ export default function HomePage() {
                 />
               </div>
               <div className="mt-4 font-semibold">{p.name}</div>
-              <p className="mt-2 text-sm text-slate-300">{p.desc}</p>
-            </a>
+              <p className="mt-2 text-sm text-slate-300 flex-grow">{p.desc}</p>
+
+              {/* Buttons Section */}
+              <div className="mt-4 flex gap-3">
+                {p.live && (
+                  <a
+                    href={p.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 bg-blue-500 hover:bg-blue-600 text-white text-sm rounded-lg shadow transition"
+                  >
+                    Live Demo
+                  </a>
+                )}
+                {p.github && (
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 bg-gray-800 hover:bg-gray-900 text-white text-sm rounded-lg shadow transition"
+                  >
+                    GitHub
+                  </a>
+                )}
+              </div>
+            </div>
           ))}
         </div>
       </section>
+
 
 
       {/* Contact */}
