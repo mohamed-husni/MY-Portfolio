@@ -174,7 +174,7 @@ export default function HomePage() {
             },
             {
               name: "SmartAdMaker – AI Poster Generator",
-              desc: "Fine-tuned Stable Diffusion with LoRA to generate advertisements. Built a React + Tailwind web app for input, display, and editing.",
+              desc: "Fine-tuned Stable Diffusion with LoRA to generate advertisements. Built a React + Tailwind web app for input, display, and editing. Live App: https://smart-ad-maker.vercel.app/",
               img: "/projects/Screenshot 2024-10-16 121538.png",
               link: "https://github.com/mohamed-husni/SmartAdMaker.git",
             },
