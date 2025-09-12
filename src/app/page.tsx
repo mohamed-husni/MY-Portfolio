@@ -168,7 +168,7 @@ export default function HomePage() {
           {[
             {
               name: "AWS CI/CD Pipeline",
-              desc: "Designed and implemented a fully automated CI/CD pipeline on AWS integrating GitHub Actions, CodeBuild, CodeDeploy, and CodePipeline services.",
+              desc: "Designed and implemented a fully automated CI/CD pipeline on AWS integrating GitHub Actions, CodeBuild, CodeDeploy, and CodePipeline services.Enabled rapid, reliable feature delivery and simplified rollback processes.This project showcases skills in cloud-native DevOps, automation, and repeatable infrastructure provisioning. ",
               img: "/projects/aws-color.webp",
               github: "https://github.com/mohamed-husni/DevOps-project01.git",
             },
