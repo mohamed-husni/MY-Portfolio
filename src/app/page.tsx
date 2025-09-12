@@ -31,59 +31,49 @@ export default function HomePage() {
   return (
 
     <div className="space-y-16">
-      {/* Hero */}
+     <section className="pt-7">
+  <div className="grid gap-6 lg:grid-cols-2 items-center">
+    <div className="text-center lg:text-left">
+      <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-400 via-pink-400 to-orange-400 text-transparent bg-clip-text">
+        Mohamed Husni
+      </h1>
+      <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-slate-300 tracking-wide">
+        SOFTWARE ENGINEER <span className="text-indigo-400">|</span> DEVOPS ENTHUSIAST
+      </h2>
+      <p className="mt-6 text-slate-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+        Motivated Software Engineer with a strong foundation in full-stack development and a growing specialization in DevOps practices.
+        Experienced in building scalable web applications, fine-tuning AI models, and deploying systems on cloud platforms.
+        Skilled in bridging the gap between development and infrastructure automation, capable of delivering projects from design to deployment.
+        Seeking a Software Engineer Internship to apply technical expertise, collaborate with teams, and contribute to real-world solutions.
+      </p>
 
+      <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+        <a
+          href="/Husni_DevOps_Intern.pdf"
+          className="px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold shadow-lg hover:scale-105 transition"
+        >
+          📄 Download Resume
+        </a>
+        <a
+          href="#projects"
+          className="px-6 py-3 rounded-lg bg-gradient-to-r from-orange-400 to-pink-500 text-white font-semibold shadow-lg hover:scale-105 transition"
+        >
+          🚀 See Projects
+        </a>
+      </div>
+    </div>
 
-      <section className="pt-6">
-        <div className="grid gap-6 lg:grid-cols-3 items-center">
-          {/* Left side: text */}
-          <div className="lg:col-span-2 text-center lg:text-left">
-            {/* Name */}
-            <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-400 via-pink-400 to-orange-400 text-transparent bg-clip-text">
-              Mohamed Husni
-            </h1>
+   
+    <div className="flex justify-center lg:justify-end">
+      <img
+        src="/profile.jpeg"
+        alt="Husni Shafeer"
+        className="rounded-full w-64 h-64 border-4 border-indigo-500/50 shadow-xl object-cover"
+      />
+    </div>
+  </div>
+</section>
 
-            {/* Job Title */}
-            <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-slate-300 tracking-wide">
-              SOFTWARE ENGINEER <span className="text-indigo-400">|</span> DEVOPS ENTHUSIAST
-            </h2>
-
-            {/* Summary */}
-            <p className="mt-6 text-slate-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Motivated Software Engineer with a strong foundation in full-stack development and a growing specialization in DevOps practices.
-              Experienced in building scalable web applications, fine-tuning AI models, and deploying systems on cloud platforms.
-              Skilled in bridging the gap between development and infrastructure automation, capable of delivering projects from design to deployment.
-              Seeking a Software Engineer Internship to apply technical expertise, collaborate with teams, and contribute to real-world solutions.
-            </p>
-
-            {/* Buttons */}
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a
-                href="/Husni_DevOps_Intern.pdf"
-                className="px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold shadow-lg hover:scale-105 transition"
-              >
-                📄 Download Resume
-              </a>
-              <a
-                href="#projects"
-                className="px-6 py-3 rounded-lg bg-gradient-to-r from-orange-400 to-pink-500 text-white font-semibold shadow-lg hover:scale-105 transition"
-              >
-                🚀 See Projects
-              </a>
-            </div>
-          </div>
-
-
-          {/* Right side: image */}
-          <div className="flex justify-center lg:justify-end">
-            <img
-              src="/profile.jpeg"
-              alt="Husni Shafeer"
-              className="rounded-full w-50 h-50 border-4 border-indigo-500/50 shadow-lg"
-            />
-          </div>
-        </div>
-      </section>
 
 
       {/* Skills */}
@@ -178,16 +168,18 @@ export default function HomePage() {
           {[
             {
               name: "AWS CI/CD Pipeline",
-              desc: "Designed a CI/CD pipeline on AWS for a Java Maven web app using GitHub, CodeBuild, CodeDeploy, and CodePipeline.",
+              desc: "Designed and implemented a fully automated CI/CD pipeline on AWS integrating GitHub Actions, CodeBuild, CodeDeploy, and CodePipeline services.",
               img: "/projects/aws-color.webp",
               github: "https://github.com/mohamed-husni/DevOps-project01.git",
             },
             {
               name: "SmartAdMaker – AI Poster Generator",
-              desc: "Fine-tuned Stable Diffusion with LoRA to generate advertisements. Built a React + Tailwind web app for input, display, and editing.",
+              desc:  "Built a full-stack AI-powered web application using a custom fine-tuned Stable Diffusion model with LoRA. Developed React + Tailwind frontend and Node.js backend on Google Cloud Run with Firebase Storage and Firestore. Deployed frontend on Vercel, enabling users to create and manage AI-generated ad posters seamlessly.",
               img: "/projects/Screenshot 2024-10-16 121538.png",
               github: "https://github.com/mohamed-husni/SmartAdMaker.git",
               live: "https://smart-ad-maker.vercel.app/",
+              github2:  "https://github.com/mohamed-husni/SmartAdMaker-Backend",
+              
             },
             {
               name: "MongoDB App – Lanka Milk Foods",
@@ -245,6 +237,17 @@ export default function HomePage() {
                     GitHub
                   </a>
                 )}
+                 {p.github2 && (
+                  <a
+                    href={p.github2}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 bg-gray-800 hover:bg-gray-900 text-white text-sm rounded-lg shadow transition"
+                  >
+                    GitHub Backend
+                  </a>
+                )}
+                 
               </div>
             </div>
           ))}
